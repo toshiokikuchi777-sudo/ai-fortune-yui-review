@@ -431,6 +431,93 @@
   }
   .size__notes b{color:var(--accent);}
 
+  /* ===== 4. Structure ===== */
+  .structure{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:60px;
+    align-items:center;
+    margin-top:24px;
+  }
+  .structure__diagram{
+    background:radial-gradient(circle at 50% 30%, #fff 0%, var(--bg-2) 90%);
+    border-radius:8px;
+    padding:40px 20px;
+    display:flex;
+    justify-content:center;
+    min-height:560px;
+  }
+  .structure__diagram svg{
+    width:100%;
+    max-width:280px;
+    height:auto;
+  }
+  .structure__parts{
+    display:grid;
+    gap:14px;
+  }
+  .structure__part{
+    display:grid;
+    grid-template-columns:48px 1fr;
+    gap:16px;
+    padding:16px 18px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    align-items:start;
+    transition:all .2s;
+  }
+  .structure__part:hover{
+    border-color:var(--accent);
+    transform:translateX(4px);
+  }
+  .structure__num{
+    width:36px; height:36px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--f-en);
+    font-weight:700;
+    font-size:14px;
+    color:#fff;
+    background:var(--ink);
+  }
+  .structure__part--washer .structure__num{
+    background:var(--accent);
+  }
+  .structure__name{
+    font-family:var(--f-jp);
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:.06em;
+    margin-bottom:4px;
+  }
+  .structure__role{
+    font-size:13px;
+    color:var(--ink-2);
+    line-height:1.7;
+  }
+  .structure__role em{
+    font-style:normal;
+    color:var(--accent);
+    font-weight:600;
+  }
+  .structure__notes{
+    margin-top:36px;
+    padding:24px 28px;
+    background:var(--accent-soft);
+    border-radius:6px;
+    font-size:14px;
+    line-height:1.85;
+    color:var(--ink-2);
+  }
+  .structure__notes b{color:var(--accent);}
+  @media (max-width:760px){
+    .structure{grid-template-columns:1fr; gap:32px;}
+    .structure__diagram{min-height:auto; padding:24px;}
+  }
+
   /* ===== Photos grid ===== */
   .photos{
     display:grid;
@@ -572,8 +659,9 @@
     </h1>
     <p class="hero__note">
       AI占いお守りシリーズ新作の<b>デザイン確認用ページ</b>です。<br>
-      ① クリッカーの押し心地　② 起き上がりの動き　③ 実寸サイズ感<br>
-      この3点を、実際に触りながら確認してください。
+      ① クリッカーの押し心地　② 起き上がりの動き<br>
+      ③ 実寸サイズ感　④ 5層スタックの内部構造<br>
+      この4点を、実際に触りながら確認してください。
     </p>
   </div>
 
@@ -681,6 +769,156 @@
         <b>参考：</b>500円玉（直径26.5mm）が2枚分よりひと回り大きいくらい。<br>
         スマホストラップ／キーホルダー／根付け紐に十分通せるサイズ感です。
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. STRUCTURE ===== -->
+<section class="block">
+  <div class="wrap">
+    <div class="block__head">
+      <div class="block__num">CHECK&nbsp;04&nbsp;／&nbsp;STRUCTURE</div>
+      <h2 class="block__title">内部構造は、5層スタック。</h2>
+      <p class="block__desc">
+        ふくよかな見た目の中身は、機能ごとに分かれた5つのパーツが積み重なった構造。<br>
+        クリッカー機構を中央に内蔵し、最下層にはワッシャー（金属円盤）で<b>おもり</b>を入れて重心を作ります。
+      </p>
+    </div>
+
+    <div class="structure">
+      <!-- SVG 分解図 -->
+      <div class="structure__diagram">
+        <svg viewBox="0 0 280 560" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset="1" stop-color="#EFEAE0"/>
+            </linearGradient>
+            <linearGradient id="redG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#D85146"/>
+              <stop offset="1" stop-color="#A93630"/>
+            </linearGradient>
+            <linearGradient id="oraG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F08A50"/>
+              <stop offset="1" stop-color="#C45F2C"/>
+            </linearGradient>
+            <linearGradient id="metalG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#E8E4DA"/>
+              <stop offset=".5" stop-color="#B8B2A4"/>
+              <stop offset="1" stop-color="#E8E4DA"/>
+            </linearGradient>
+          </defs>
+
+          <!-- 1. 白狐本体 -->
+          <g>
+            <!-- 耳 -->
+            <path d="M 95,80 L 80,30 L 115,55 Z" fill="url(#bodyG)" stroke="#C8463C" stroke-width="1"/>
+            <path d="M 185,80 L 200,30 L 165,55 Z" fill="url(#bodyG)" stroke="#C8463C" stroke-width="1"/>
+            <path d="M 100,72 L 92,45 L 110,62 Z" fill="#E8847A" opacity=".85"/>
+            <path d="M 180,72 L 188,45 L 170,62 Z" fill="#E8847A" opacity=".85"/>
+            <!-- 顔（球） -->
+            <ellipse cx="140" cy="130" rx="68" ry="70" fill="url(#bodyG)" stroke="#C8463C" stroke-width="1"/>
+            <!-- 額の朱 -->
+            <path d="M 132,95 Q 140,82 148,95 M 140,82 L 140,72 M 128,92 Q 132,84 130,75 M 152,92 Q 148,84 150,75" stroke="#C8463C" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <!-- 目 -->
+            <path d="M 116,128 Q 122,134 128,128" stroke="#1a1816" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M 152,128 Q 158,134 164,128" stroke="#1a1816" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- 頬の朱 -->
+            <ellipse cx="112" cy="138" rx="6" ry="4" fill="#C8463C" opacity=".7"/>
+            <ellipse cx="168" cy="138" rx="6" ry="4" fill="#C8463C" opacity=".7"/>
+            <!-- 結びマーク -->
+            <path d="M 130,168 Q 140,160 150,168 Q 145,176 140,170 Q 135,176 130,168 Z" stroke="#C8463C" stroke-width="2" fill="none"/>
+            <text x="140" y="194" text-anchor="middle" font-family="Inter" font-size="9" fill="#8a857c" letter-spacing="1.5">SHELL</text>
+          </g>
+
+          <!-- 接続点線 -->
+          <line x1="140" y1="210" x2="140" y2="232" stroke="#bbb" stroke-width="1" stroke-dasharray="3,3"/>
+
+          <!-- 2. 赤い四角ブロック（クリッカー押下キャップ） -->
+          <g>
+            <rect x="108" y="232" width="64" height="34" rx="3" fill="url(#redG)" stroke="#7d2620" stroke-width="1"/>
+            <rect x="108" y="232" width="64" height="6" fill="#fff" opacity=".18"/>
+            <text x="140" y="288" text-anchor="middle" font-family="Inter" font-size="9" fill="#8a857c" letter-spacing="1.5">PUSH CAP</text>
+          </g>
+
+          <line x1="140" y1="294" x2="140" y2="312" stroke="#bbb" stroke-width="1" stroke-dasharray="3,3"/>
+
+          <!-- 3. 赤いお椀型台座 -->
+          <g>
+            <path d="M 80,316 Q 80,360 140,362 Q 200,360 200,316 Z" fill="url(#redG)" stroke="#7d2620" stroke-width="1"/>
+            <ellipse cx="140" cy="316" rx="60" ry="10" fill="#5a1b18"/>
+            <ellipse cx="140" cy="316" rx="48" ry="7" fill="#2a0908"/>
+            <text x="140" y="384" text-anchor="middle" font-family="Inter" font-size="9" fill="#8a857c" letter-spacing="1.5">RING HOLDER</text>
+          </g>
+
+          <line x1="140" y1="392" x2="140" y2="410" stroke="#bbb" stroke-width="1" stroke-dasharray="3,3"/>
+
+          <!-- 4. クリッカー本体 -->
+          <g>
+            <rect x="108" y="410" width="64" height="22" rx="2" fill="url(#bodyG)" stroke="#aaa" stroke-width="1"/>
+            <rect x="100" y="432" width="80" height="14" rx="2" fill="url(#metalG)" stroke="#888" stroke-width="1"/>
+            <circle cx="140" cy="421" r="3" fill="#C9A961"/>
+            <text x="140" y="464" text-anchor="middle" font-family="Inter" font-size="9" fill="#8a857c" letter-spacing="1.5">CLICKER UNIT</text>
+          </g>
+
+          <line x1="140" y1="472" x2="140" y2="488" stroke="#C8463C" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+          <!-- 5. オレンジ半球（ワッシャー内蔵おもり） -->
+          <g>
+            <path d="M 84,492 Q 84,540 140,544 Q 196,540 196,492 Z" fill="url(#oraG)" stroke="#7e3a18" stroke-width="1.2"/>
+            <!-- 内部のワッシャー（透視風） -->
+            <ellipse cx="140" cy="514" rx="34" ry="6" fill="none" stroke="#fff" stroke-width="1.2" stroke-dasharray="2,2" opacity=".9"/>
+            <ellipse cx="140" cy="522" rx="34" ry="6" fill="none" stroke="#fff" stroke-width="1.2" stroke-dasharray="2,2" opacity=".75"/>
+            <ellipse cx="140" cy="530" rx="34" ry="6" fill="none" stroke="#fff" stroke-width="1.2" stroke-dasharray="2,2" opacity=".6"/>
+            <text x="140" y="558" text-anchor="middle" font-family="Inter" font-size="9" fill="#C8463C" letter-spacing="1.5" font-weight="700">WASHER WEIGHT</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- パーツリスト -->
+      <ol class="structure__parts">
+        <li class="structure__part">
+          <div class="structure__num">1</div>
+          <div>
+            <div class="structure__name">白狐本体 / Shell</div>
+            <div class="structure__role">外殻パーツ。表情・結びモチーフ・耳のディテールを担う。3Dプリント造形（PLA想定）。</div>
+          </div>
+        </li>
+        <li class="structure__part">
+          <div class="structure__num">2</div>
+          <div>
+            <div class="structure__name">押下キャップ / Push Cap</div>
+            <div class="structure__role">頭頂から指の力をクリッカー本体へ伝えるブロック。赤い角型で本体内部に固定。</div>
+          </div>
+        </li>
+        <li class="structure__part">
+          <div class="structure__num">3</div>
+          <div>
+            <div class="structure__name">リングホルダー / Ring Holder</div>
+            <div class="structure__role">クリッカー本体を保持する赤いお椀型の中間構造。本体の重心と機構の安定を両立。</div>
+          </div>
+        </li>
+        <li class="structure__part">
+          <div class="structure__num">4</div>
+          <div>
+            <div class="structure__name">クリッカー本体 / Clicker Unit</div>
+            <div class="structure__role">既製クリッカーモジュール（金属＋プラ）を内蔵。<em>カチッ</em>という独特の音と感触の源。</div>
+          </div>
+        </li>
+        <li class="structure__part structure__part--washer">
+          <div class="structure__num">5</div>
+          <div>
+            <div class="structure__name">ワッシャーおもり / Washer Weight</div>
+            <div class="structure__role">最下部のオレンジ半球内に<em>金属ワッシャーを積層</em>して重心を作る想定。これが「起き上がり小法師」の核。</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="structure__notes">
+      <b>＊ おもり仕様の検討事項：</b>
+      ワッシャー径・枚数・固定方法（接着 or 圧入）・総重量（〜25g目安）を試作で詰めます。
+      重心位置が低いほど復元力が強くなり、揺らした時の戻りが速くなります。
     </div>
   </div>
 </section>
